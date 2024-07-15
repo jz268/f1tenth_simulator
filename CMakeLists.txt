@@ -77,10 +77,8 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
       CATKIN_DEPENDS message_runtime
   )
   set(LIBS ${LIBS} ${catkin_LIBRARIES})
-  include_directories(include ${catkin_INCLUDE_DIRS})
+  include_directories(include ${catkin_INCLUDE_DIRS})  
 
-
-  
 
   # Add the nodes
   file(GLOB NODE_SRC_FILES node/*.cpp)
@@ -90,6 +88,15 @@ if(DEFINED CATKIN_DEVEL_PREFIX)
       target_link_libraries(${_node_name} ${LIBS})
       add_dependencies(${_node_name} f1tenth_simulator_generate_messages_cpp)
   endforeach()
+
+  # file(GLOB NODE_SRC_FILES scripts/*.py)
+  # foreach(_node_file ${NODE_SRC_FILES})
+  #   catkin_install_python(PROGRAMS ${_node_file}
+  #     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+  # endforeach()
+
+  catkin_install_python(PROGRAMS node/reactive_follow_gap.py
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
   # Install the library
   install(TARGETS ${PROJECT_NAME}

@@ -76,7 +76,7 @@ public:
         // compute random amount to change desired angle by (between -range and range)
         double rand_ang = range * random - range / 2.0;
 
-        // sometimes change sign so it turns more (basically add bias to continue turning in current direction)
+        // sometimes change sign so it turns mmath.degrees(ore (basically add bias to continue turning in current direction)
         random = ((double) rand() / RAND_MAX);
         if ((random > .8) && (prev_angle != 0)) {
             double sign_rand = rand_ang / std::abs(rand_ang);
