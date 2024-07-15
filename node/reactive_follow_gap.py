@@ -9,6 +9,8 @@ import rospy
 from sensor_msgs.msg import Image, LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped, AckermannDrive
 
+# from https://github.com/f1tenth/f1tenth_labs/blob/S2023/lab4/code/src/reactive_gap_follow.py
+
 class reactive_follow_gap:
     def __init__(self):
         #Topics & Subscriptions,Publishers
