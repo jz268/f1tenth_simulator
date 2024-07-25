@@ -1,5 +1,32 @@
 source (archived): https://github.com/f1tenth/f1tenth_simulator
 
+example file structure:
+```
+f1tenth_simulator/
+|__ Dockerfile
+|__ docker-compose.yml
+|__ catkin_ws/
+    |__ src/
+        |__ f1tenth_simulator/ (this repo)
+```
+build and start container:
+```
+docker compose up -d
+docker exec -it f1tenth_sim /bin/bash
+```
+https://f1tenth.readthedocs.io/en/stable/going_forward/simulator/sim_install.html
+```
+source /opt/ros/melodic/setup.bash
+cd ~/catkin_ws
+catkin_make
+source devel/setup.bash
+```
+run simulation
+```
+roslaunch f1tenth_simulator simulator.launch
+```
+
+
 # THIS REPO IS NO LONGER MAINTAINED
 ## If you need a F1TENTH simulation in ROS, we have moved to a containerized ROS 2 simulation here: [https://github.com/f1tenth/f1tenth_gym_ros](https://github.com/f1tenth/f1tenth_gym_ros)
 
