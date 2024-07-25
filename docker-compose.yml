@@ -1,0 +1,16 @@
+version: "3"
+services:
+  f1tenth_sim:
+    image: test
+    build: .
+    command: /bin/bash
+    environment:
+      DISPLAY: $DISPLAY
+    volumes:
+      - ./catkin_ws:/root/catkin_ws
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+    network_mode: "host"
+    stdin_open: true
+    tty: true
+    privileged: true
