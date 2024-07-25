@@ -1,4 +1,7 @@
 source (archived): https://github.com/f1tenth/f1tenth_simulator
+this version of the simulator supports multiple agents, i haven't tried it yet but should work the same way:
+https://github.com/YashTrikannad/f110-simulator-multi-agent/
+
 
 example file structure:
 ```
