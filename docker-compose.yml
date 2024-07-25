@@ -3,6 +3,7 @@ services:
   f1tenth_sim:
     image: test
     build: .
+    container_name: f1tenth_sim
     command: /bin/bash
     environment:
       DISPLAY: $DISPLAY
